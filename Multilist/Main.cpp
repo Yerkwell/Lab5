@@ -108,7 +108,39 @@ void main()
 	m.push("s5","c3");
 	m.push("s6","c1");
 	m.push("s6","c3");
-	m.search_by_name("s1");
-	m.search_by_course("c3");
-	getch();
+	int act=0;
+	while(act!=5)
+	{
+		cout<<"Chto sdelat'?\n1 - Kursy studenta; 2 - Studenty kursa; 3 - Spisok po studentam; 4 - Spisok po kursam; 5 - Vyhod\n";
+		cin>>act;
+		switch(act)
+		{
+		case 1:
+			{
+				string a;
+				cout<<"Imya studenta: ";
+				cin>>a;
+				m.search_by_name(a);
+				break;
+			}
+		case 2:
+			{
+				string a;
+				cout<<"Kurs: ";
+				cin>>a;
+				m.search_by_course(a);
+				break;
+			}
+		case 3:
+			{
+				m.print_by_students();
+				break;
+			}
+		case 4:
+			{
+				m.print_by_courses();
+				break;
+			}
+		}
+	}
 }
